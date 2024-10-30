@@ -7,7 +7,7 @@
     tags:
           Name: "Site estatico"
           Environment: "Production"
-    acl: public-read
+    permission: public-read
     object: []
         
 
