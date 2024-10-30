@@ -1,15 +1,12 @@
 ---
 - name: Criando bucket s3
-  aws_s3:
-    bucket: "site-estatico-{{ bucket_name }}"
+  s3_bucket:
+    name: "site-estatico-{{ bucket_name }}"
+    state: present
     region: "{{ region }}"
-    mode: create
     tags:
           Name: "Site estatico"
-          Environment: "Production"
-    permission: public-read
-    object: []
-        
+          Environment: "Production"        
 
 - name: Configurando Website
   s3_website:
