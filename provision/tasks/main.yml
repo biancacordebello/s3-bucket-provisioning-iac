@@ -10,7 +10,7 @@
 
 - name: Configurando Website
   s3_website:
-    bucket: "{{ bucket_name }}"
+    name: "{{ bucket_name }}"
     index_document: "index.html"
     error_document: "error.html"
     region: "{{ region }}"
