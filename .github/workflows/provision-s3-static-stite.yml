@@ -31,7 +31,7 @@ jobs:
           ansible-playbook -i localhost main.yml
       
       - name: Add comment
-        run: gh issue comment "--repo "$REPO" --body "$BODY"
+        run: gh push comment "$REPO" --body "$BODY"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           REPO: ${{ github.repository }}
