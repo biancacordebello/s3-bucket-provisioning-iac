@@ -8,6 +8,7 @@
           Name: "Site estatico"
           Environment: "Production"
     acl: public-read
+    object: []
         
 
 - name: Configurando Website
