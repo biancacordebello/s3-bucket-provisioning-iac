@@ -11,7 +11,7 @@
 - name: Configurando Website
   s3_website:
     name: "{{ bucket_name }}"
-    index_document: "index.html"
-    error_document: "error.html"
+    suffix: "index.html"
+    error_key: "error.html"
     region: "{{ region }}"
     state: present
