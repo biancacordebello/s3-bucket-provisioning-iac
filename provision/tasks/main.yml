@@ -1,7 +1,7 @@
 ---
 - name: Criando bucket s3
   s3_bucket:
-    name: "site-estatico-{{ bucket_name }}"
+    name: "{{ bucket_name }}"
     state: present
     region: "{{ region }}"
     tags:
@@ -10,7 +10,7 @@
 
 - name: Configurando Website
   s3_website:
-    bucket: "static-site-{{ bucket_name }}"
+    bucket: "{{ bucket_name }}"
     index_document: "index.html"
     error_document: "error.html"
     region: "{{ region }}"
