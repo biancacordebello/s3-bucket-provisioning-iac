@@ -14,3 +14,4 @@
     index_document: "index.html"
     error_document: "error.html"
     region: "{{ region }}"
+    state: present
