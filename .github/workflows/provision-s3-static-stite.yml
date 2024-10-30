@@ -28,7 +28,7 @@ jobs:
       
       - name: Run Ansible playbook
         run: |
-           ansible-playbook -i localhost, provision/tasks/main.yml -e "@provision/vars/main.yml
+           ansible-playbook -i localhost, provision/tasks/main.yml -e "@provision/vars/main.yml"
       
       - name: Print success message
         run: echo "O bucket S3 foi criado com sucesso! 🎉"
