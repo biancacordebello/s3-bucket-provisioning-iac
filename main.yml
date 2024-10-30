@@ -1,5 +1,8 @@
 ---
-- hosts: local
+- name: Playbook to create S3 Infra
+- hosts: localhost
+  vars_files:
+    - provision/vars/main.yml 
   roles:
   - provision 
   
