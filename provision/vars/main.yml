@@ -1,2 +1,2 @@
-bucket_name: "IaC-bucket-example" 
+bucket_name: "IaCBucketExample" 
 region: "us-east-1"
