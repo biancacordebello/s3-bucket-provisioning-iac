@@ -16,6 +16,6 @@
     state: present
     mode: put
     region: "{{ region }}"
-    loop:
-      - index.html
-      - error.html
+  loop:
+    - index.html
+    - error.html
