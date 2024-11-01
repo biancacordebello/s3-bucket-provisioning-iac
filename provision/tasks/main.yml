@@ -15,7 +15,7 @@
     src: "provision/files/{{ item }}"
     state: present
     mode: put
-      region: "{{ region }}"
+    region: "{{ region }}"
     loop:
       - index.html
       - error.html
