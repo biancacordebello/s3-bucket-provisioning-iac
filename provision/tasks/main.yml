@@ -11,7 +11,11 @@
 - name: Configurando Website
   s3_website:
     name: "{{ bucket_name }}"
-    suffix: "index.html"
-    error_key: "error.html"
-    region: "{{ region }}"
+    object: "{{ item }}"
+    src: "provision/files/{{ item }}"
     state: present
+    mode: put
+      region: "{{ region }}"
+    loop:
+      - index.html
+      - error.html
