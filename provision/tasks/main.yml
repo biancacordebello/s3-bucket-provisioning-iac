@@ -1,5 +1,5 @@
 ---
-- name: Criando bucket s3
+- name: Criando bucket S3
   s3_bucket:
     name: "{{ bucket_name }}"
     state: present
