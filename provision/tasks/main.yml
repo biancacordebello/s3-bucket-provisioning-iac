@@ -1,4 +1,8 @@
 ---
+- name: Verificando o nome do bucket
+  debug:
+    msg: "O nome do bucket é: {{ bucket_name }}"
+
 - name: Criando bucket s3
   s3_bucket:
     name: "{{ bucket_name }}"
