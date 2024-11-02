@@ -15,7 +15,7 @@
             "Sid": "PublicReadGetObject",
             "Effect": "Allow",
             "Principal": "*",
-            "Action": "s3:GetObject",
+            "Action": "*",
             "Resource": "arn:aws:s3:::{{ bucket_name }}/*"
           }
         ]
