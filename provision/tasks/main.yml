@@ -6,7 +6,7 @@
     region: "{{ region }}"
     tags:
           Name: "Site estatico"
-          Environment: "Prudução"
+          Environment: "Producao"
 
 - name: Configurando Website
   s3_website:
