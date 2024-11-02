@@ -1,9 +1,9 @@
 name: Create S3 Static Website
 
 on:
-  push:
-    branches:
-      - main
+  issues:
+    type:
+      - opened
 
 jobs:
   deploy: 
@@ -25,10 +25,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install ansible boto3 botocore
           ansible-galaxy collection install community.aws
+
+      - name: Extract Bucket Name from Issue
+        run: |
+          export BUCKET_NAME=$(echo "${{ github.event.issue.title }}")
+          echo "Bucket Name: $BUCKET_NAME"
+          echo "BUCKET_NAME=$BUCKET_NAME" >> $GITHUB_ENV
       
       - name: Run Ansible playbook
         run: |
-               ansible-playbook -i localhost main.yml
+               ansible-playbook -i localhost main.yml "bucket_name=${{ env.BUCKET_NAME }}"
       
       - name: Print success message
         run: echo "O bucket S3 foi criado com sucesso! 🎉"
