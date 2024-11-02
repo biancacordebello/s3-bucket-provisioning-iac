@@ -7,19 +7,19 @@
     tags:
           Name: "Site estatico"
           Environment: "Prudução"
-    policy: | 
-      {
-        "Version": "2012-10-17",
-        "Statement": [
-          {
-            "Sid": "PublicReadGetObject",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "*",
-            "Resource": "arn:aws:s3:::{{ bucket_name }}/*"
-          }
-        ]
-      }
+    # policy: | 
+    #   {
+    #     "Version": "2012-10-17",
+    #     "Statement": [
+    #       {
+    #         "Sid": "PublicReadGetObject",
+    #         "Effect": "Allow",
+    #         "Principal": "*",
+    #         "Action": "*",
+    #         "Resource": "arn:aws:s3:::{{ bucket_name }}/*"
+    #       }
+    #     ]
+    #   }
 
 - name: Configurando Website
   s3_website:
@@ -32,11 +32,11 @@
 - name: Criando objeto index no bucket s3
   amazon.aws.s3_object:
     bucket: "{{ bucket_name }}"
-    src: "./index.html"
+    src: "../index.html"
     mode: put
 
 - name: Criando objeto error no bucket s3
   amazon.aws.s3_object:
     bucket: "{{ bucket_name }}"
-    src: "./404.html"
+    src: "../404.html"
     mode: put
