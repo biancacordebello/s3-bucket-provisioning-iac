@@ -34,7 +34,7 @@ jobs:
       
       - name: Run Ansible playbook
         run: |
-               ansible-playbook -i localhost main.yml "bucket_name=${{ env.BUCKET_NAME }}"
+               ansible-playbook -i localhost main.yml -e "bucket_name=${{ env.BUCKET_NAME }}"
       
       - name: Print success message
         run: echo "O bucket S3 foi criado com sucesso! 🎉"
