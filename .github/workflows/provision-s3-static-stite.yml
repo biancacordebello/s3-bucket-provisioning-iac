@@ -1,9 +1,9 @@
 name: Create S3 Static Website
 
 on:
-  push:
-    branch:
-      - main
+  issues:
+    type:
+      - opened
 
 jobs:
   deploy: 
