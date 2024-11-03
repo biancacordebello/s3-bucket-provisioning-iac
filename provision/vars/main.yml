@@ -1,2 +1,2 @@
-bucket_name: "iac-teste" 
+bucket_name: "{{ bucket_name }}"
 region: "us-east-1"
